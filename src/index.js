@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+
+    <Routes>
+        <Route path="/" element={<App/>}/>
+        <Route path="/favourites" element={<App/>}/>
+      </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
