@@ -8,7 +8,9 @@ export const PokemonList = ({pokemons}) => {
    {
     pokemons.map(pokemon=>(
       <li key={pokemon.name}>
-      <Link to={`/pokemon/${pokemon.name}`} element={<Pokemon pokemon={pokemon.name}/>}>
+      {/* <Link to={`/pokemon/${pokemon.name}`} element={<Pokemon pokemon={pokemon.name}/>}> */}
+      <Link 
+      to={{ pathname: `/pokemon/${pokemon.name}`, query: { pokemon: pokemon.name }}}  element={<Pokemon pokemon={pokemon.name} />}>
       {pokemon.name}
       </Link>
     </li>
