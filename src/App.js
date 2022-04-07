@@ -17,7 +17,7 @@ function App() {
     const fetchPokemon = async()=>{
       const result = await axios.get('https://pokeapi.co/api/v2/pokemon/');
       setPokemons(result.data.results);
-      console.log(result);
+     // console.log(result);
       //get the total amount
     setPokemonslimit(result.data.count);
     }
@@ -29,7 +29,7 @@ function App() {
     axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pageNumber}}&limit=20`)
     .then(function (response) {
     // handle success
-    console.log(response);
+    //console.log(response);
     setPokemons(response.data.results);
   })
   .catch(function (error) {
@@ -41,7 +41,7 @@ function App() {
 
 
   
-  console.log(pokemons);
+  //console.log(pokemons);
   //console.log(pokemonslimit);
   return (
     <div className="App">
