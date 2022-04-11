@@ -10,8 +10,7 @@ export const PokemonList = ({pokemons}) => {
     pokemons.map(pokemon=>(
       <li key={uuidv4()} id={uuidv4()}>
       {/* <Link to={`/pokemon/${pokemon.name}`} element={<Pokemon pokemon={pokemon.name}/>}> */}
-      <Link 
-      to={{ pathname: `/pokemon/${pokemon.name}`, query: { pokemon: pokemon.name }}}  element={<Pokemon pokemon={pokemon.name} />}>
+      <Link to={`/pokemon/${pokemon.name}`} state={{ name: pokemon.name ,search_url: pokemon.url }}>
       {pokemon.name}
       </Link>
     </li>

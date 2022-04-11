@@ -1,20 +1,32 @@
-import React, { useEffect,useState } from 'react'
-import { useParams } from 'react-router';
-export default function Pokemon({query}) {
-    console.log(query);
-  
-   const { name } = useParams();
-   const [selectedPokemon,setselectedPokemon] = useState();
+import React,{useState,useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios'
+function Pokemon () {
+  const location = useLocation();
+  const { name } = location.state
+  const { search_url } = location.state
+  // console.log(from);
+  // console.log(hello);
+  const [selectedpokemon,setselectedpokemon] = useState([]);
 
-    //console.log(name);
+  useEffect(()=>{
+    const fetchPokemon = async()=>{
+    const result = await axios.get(`${search_url}`);
+    //setPokemons(result.data.results);
+    // console.log(result);
+    //get the total amount
+    setselectedpokemon(result.data);
+    }
+   
+    fetchPokemon();
+    },[]);
 
-    
-    // useEffect(()=>{
+    console.log(selectedpokemon);
 
-    // },[])
-    //console.log(this.props.pokemon);
-  //  const test = props.pokemon;
   return (
-    <div>Pokemon {name}</div>
+  <h1></h1>
   )
 }
+
+
+export default Pokemon;

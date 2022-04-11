@@ -45,8 +45,8 @@ function App() {
   //console.log(pokemonslimit);
   return (
     <div className="App">
-   
-Learn sd
+
+      Learn sd
       <PokemonList pokemons={pokemons} />
       <Pagination pokemonPerPage={pokemonPerPage} totalPokemon={pokemonslimit} paginate={paginate}/>
     </div>
