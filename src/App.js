@@ -64,8 +64,7 @@ function App() {
     fetchPokemon();
   }
 
-  console.log(prevpage);  console.log(nextpage);
-  
+
 
   let prev;
   let next;

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Pokemon from './components/Pokemon';
-import wishlist from './components/wishlist';
+import Wishlist from './components/Wishlist';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
@@ -12,8 +12,8 @@ ReactDOM.render(
 
     <Routes>
         <Route path="/" element={<App/>}/>
-        <Route path="/pokemon/:name" element={<Pokemon add={wishlist.add}/>}/>
-        <Route path="/wishlist" element={<wishlist/>}/>
+        <Route path="/pokemon/:name" element={<Pokemon/>}/>
+        <Route path="/wishlist" element={<Wishlist/>}/>
       </Routes>
   </BrowserRouter>,
   document.getElementById('root')
