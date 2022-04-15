@@ -37,7 +37,11 @@ function App() {
   })
 
   }
- 
+  
+  function NextPg(url){}
+
+  function NextPg(url){}
+  
 
 
   
@@ -46,7 +50,7 @@ function App() {
   return (
     <div className="App">
 
-      Learn sd
+
       <PokemonList pokemons={pokemons} />
       <Pagination pokemonPerPage={pokemonPerPage} totalPokemon={pokemonslimit} paginate={paginate}/>
     </div>
