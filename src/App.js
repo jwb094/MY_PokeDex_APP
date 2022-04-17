@@ -20,28 +20,13 @@ function App() {
       setPokemons(result.data.results);
       setnextPage(result.data.next);
       setprevpage(result.data.previous);
-      console.log(result);
+      //console.log(result);
       //get the total amount
     setPokemonslimit(result.data.count);
     }
     
     fetchPokemon();
   }, []);
-
-  // function paginate(pageNumber){
-  //   axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pageNumber}}&limit=20`)
-  //   .then(function (response) {
-  //   // handle success
-  //   //console.log(response);
-  //   setPokemons(response.data.results);
-  //   setnextPage(response.data.next);
-  //   setprevpage(response.data.prev);
-  // })
-  // .catch(function (error) {
-  //   // handle error
-  // })
-
-  // }
 
   function paginate(search_url){
     const fetchPokemon = async()=>{
@@ -50,18 +35,8 @@ function App() {
       setnextPage(result.data.next);
       setprevpage(result.data.previous);
     }
-    //   axios.get(`${search_url}`)
-    //   .then(function (response) {
-    //   // handle success
-    //   //console.log(response);
-    //   setPokemons(response.data.results);
-    //   setnextPage(response.data.next);
-    //   setprevpage(response.data.prev);
-    // })
-    // .catch(function (error) {
-    //   // handle error
-    // })
-    console.timeLog();
+
+    
     fetchPokemon();
   }
 
@@ -72,19 +47,18 @@ function App() {
 
   if (prevpage != null) {
     prev = <li class="page-item col-md-2  col-xs-12">
-    <a class="page-link" onClick={() =>  paginate(nextpage)}>Previous</a>
-  </li>
-    //<button type="button" class="btn btn-primary" onClick={() => paginate(prevpage)}>Prev Page</button>
+                <a class="page-link" onClick={() =>  paginate(prevpage)}>Previous</a>
+            </li>
+  
   }
   if (nextpage) {
-    next = <li class="page-item col-md-2 col-xs-12">
-    <a class="page-link" onClick={() =>  paginate(nextpage)}>Next</a>
-  </li>
-    
-    {/* <button type="button" class="btn btn-primary" onClick={() =>  paginate(nextpage)}>Next Page</button> */}
+    next =  <li class="page-item col-md-2 col-xs-12">
+              <a class="page-link" onClick={() =>  paginate(nextpage)}>Next</a>
+            </li>
+
   }
   
-  console.log(prev);
+  
   //console.log(pokemonslimit);
   return (
     <div className="App">
@@ -92,12 +66,10 @@ function App() {
       <PokemonList pokemons={pokemons} />
       <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center row">
-        
           {prev}
           {next}
         </ul>
       </nav>
-      {/* <Pagination pokemonPerPage={pokemonPerPage} nextpage={nextpage} prevpage={prevpage} totalPokemon={pokemonslimit} paginate={paginate}/> */}
     </div>
   );
 }
