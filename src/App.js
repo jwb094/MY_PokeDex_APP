@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { PokemonList } from './components/PokemonList';
 import { Pagination } from './components/Pagination';
+import { Header } from './components/Header';
 function App() {
   
   const [pokemons,setPokemons]  = useState([]);
@@ -70,25 +71,32 @@ function App() {
   let next;
 
   if (prevpage != null) {
-    prev = <button onClick={() => paginate(prevpage)}>Prev Page</button>
+    prev = <li class="page-item col-md-2  col-xs-12">
+    <a class="page-link" onClick={() =>  paginate(nextpage)}>Previous</a>
+  </li>
+    //<button type="button" class="btn btn-primary" onClick={() => paginate(prevpage)}>Prev Page</button>
   }
   if (nextpage) {
-    next = <button onClick={() =>  paginate(nextpage)}>Next Page</button>
+    next = <li class="page-item col-md-2 col-xs-12">
+    <a class="page-link" onClick={() =>  paginate(nextpage)}>Next</a>
+  </li>
+    
+    {/* <button type="button" class="btn btn-primary" onClick={() =>  paginate(nextpage)}>Next Page</button> */}
   }
   
   console.log(prev);
   //console.log(pokemonslimit);
   return (
     <div className="App">
-
-
+      <Header/>
       <PokemonList pokemons={pokemons} />
-      <nav>
-        <ul className='pagination'>
-          <li>{prev}</li>
-          <li>{next}</li>
-        </ul>    
-    </nav>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center row">
+        
+          {prev}
+          {next}
+        </ul>
+      </nav>
       {/* <Pagination pokemonPerPage={pokemonPerPage} nextpage={nextpage} prevpage={prevpage} totalPokemon={pokemonslimit} paginate={paginate}/> */}
     </div>
   );

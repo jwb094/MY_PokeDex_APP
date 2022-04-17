@@ -11,6 +11,7 @@ ReactDOM.render(
   <BrowserRouter>
 
     <Routes>
+      
         <Route path="/" element={<App/>}/>
         <Route path="/pokemon/:name" element={<Pokemon/>}/>
         <Route path="/wishlist" element={<Wishlist/>}/>

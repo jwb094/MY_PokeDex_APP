@@ -1,14 +1,27 @@
 .App {
 background-color: #fff;
-max-width: 41.5rem;
+/* max-width: 41.5rem; */
 margin: 0 auto;
 
 }
 
-.App ul {
-  margin: 5% 50%;
+/* .App ul {
+  margin: 4% 44%;
+} */
+
+
+.App ul li {
+  list-style: none;
+  text-align: center;
+  font-size: 2vh;
+
 }
-/* 
+
+.App ul li a {
+  text-decoration: none;
+  color: black;
+}
+  /* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;

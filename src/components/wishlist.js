@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import { v4 as uuidv4 } from 'uuid';
-
+import { v4 as uuidv4 } from 'uuid'; 
+import { Header } from './Header';
 function Wishlist () {
     const [list,setlist]  = useState([]);
     useEffect(()=>{
@@ -10,20 +10,24 @@ function Wishlist () {
     },[])
     console.log(list);
   return (
-    <div>
-    <ul>
-   {
-    list.map(pokemon=>(
-      <li key={uuidv4()} id={uuidv4()}>
-      {/* <Link to={`/pokemon/${pokemon.name}`} element={<Pokemon pokemon={pokemon.name}/>}> */}
-    
-      {pokemon}
+    <>
+    <Header/>
+    <div className="App">
+          <ul>
+          {
+            list.map(pokemon=>(
+              <li key={uuidv4()} id={uuidv4()}>
+              {/* <Link to={`/pokemon/${pokemon.name}`} element={<Pokemon pokemon={pokemon.name}/>}> */}
+            
+              {pokemon}
 
-    </li>
-   ))
-   }
-    </ul>
+            </li>
+          ))
+          }
+            </ul>
     </div>
+    </>
+     
   )
 }
 

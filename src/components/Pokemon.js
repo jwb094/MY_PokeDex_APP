@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
+import { Header } from './Header';
 function Pokemon () {
   const location = useLocation();
   const { name } = location.state
@@ -46,14 +47,17 @@ function Pokemon () {
 
   const styleObj = {
     width: '18rem', 
+    margin: '0 auto'
   }
     console.log(selectedpokemon);
      console.log(selectedpokemonimg);
      console.log(selectedpokemonstats);
 
+
   return (
 
-<>
+<>  
+<Header/>
     <div className='App'>
     <div className="card" style={styleObj}>
       <img className="card-img-top" src={selectedpokemonimg} alt="Card image cap"/>
@@ -61,6 +65,8 @@ function Pokemon () {
         <h5 className="card-title">{name}</h5>
         <p className="card-text">
           <ul>
+            <li>
+            </li>
           </ul>  
         </p>
       <button onClick={addToCollection}>Add To Collection</button>
