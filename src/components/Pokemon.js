@@ -100,7 +100,7 @@ function Pokemon () {
               Def: {defencestats}
             </li>
             <li>
-           Specail Att &nbsp;:  {sAttacktats}
+           Special Att &nbsp;:  {sAttacktats}
             </li>
             <li>
             Special Def&nbsp;: {sDefencestats}
