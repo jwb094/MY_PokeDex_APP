@@ -8,7 +8,9 @@ margin: 0 auto;
 /* .App ul {
   margin: 4% 44%;
 } */
-
+a.sections{
+  text-decoration: none;
+}
 
 .App ul li {
   list-style: none;

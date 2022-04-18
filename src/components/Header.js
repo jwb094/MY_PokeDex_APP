@@ -9,14 +9,14 @@ export const Header = () => {
     </span>
     <span class="navbar-text">
     
-     <a className=''>
-        <Link to={`/`}>
+     <a className='sections'>
+        <Link to={`/`} className="sections">
               Home
         </Link>
      </a>
      &nbsp;
-     <a className=''>
-        <Link to={`/wishlist`}>
+     <a className='sections'>
+        <Link to={`/wishlist`} className="sections">
               Wishlist
         </Link>
      </a>

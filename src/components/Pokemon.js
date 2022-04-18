@@ -7,8 +7,7 @@ function Pokemon () {
   const { name } = location.state
   const { search_url } = location.state
   const {type} = '';
-  // console.log(from);
-   //console.log(search_url);
+
   const [collectionpokemons,setnextcollectionpokemons]  = useState([]);
   const [prevcollection,setprevcollection]  = useState([]);
   const [selectedpokemon,setselectedpokemon] = useState();
@@ -24,7 +23,7 @@ function Pokemon () {
 
 
   useEffect(()=>{
-      (JSON.parse(localStorage.getItem('collection')));
+    setprevcollection(JSON.parse(localStorage.getItem('collection')));
   },[])
 
   useEffect(() => {
@@ -62,15 +61,19 @@ function Pokemon () {
     width: '18rem', 
     margin: '10% auto'
   }
+
+  const styleObj2 = {
+  float: 'left'
+    }
     //console.log(selectedpokemon);
      //console.log(selectedpokemonimg);
-     console.log(selectedpokemonstats);
-     console.log(hpstat);
-     console.log(attackstats);
-     console.log(defencestats);
-     console.log(sAttacktats);
-     console.log(sDefencestats);
-     console.log(speedstats);
+    //  console.log(selectedpokemonstats);
+    //  console.log(hpstat);
+    //  console.log(attackstats);
+    //  console.log(defencestats);
+    //  console.log(sAttacktats);
+    //  console.log(sDefencestats);
+    //  console.log(speedstats);
 
 
 
@@ -82,11 +85,11 @@ function Pokemon () {
     <div className="card" style={styleObj}>
       <img className="card-img-top" src={selectedpokemonimg} alt="Card image cap"/>
       <div className="card-body">
-        <h5 className="card-title">{name}</h5>
+        <h5 className="card-title text-center">{name}</h5>
 
         {/* <h5 className="card-title">{selectedpokemon.types[0].name}</h5> */}
         <p className="card-text">
-          <ul>
+          <ul style={styleObj2}>
           <li>
              HP &nbsp;:{hpstat}
             </li>
@@ -107,7 +110,7 @@ function Pokemon () {
             </li> 
           </ul>  
         </p>
-      <button onClick={addToCollection}>Add To Collection</button>
+        <button type="button" class="btn btn-primary" onClick={addToCollection}>Add To Wishlist Collection</button>
       </div>
     </div>
 
